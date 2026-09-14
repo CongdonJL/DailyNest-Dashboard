@@ -151,9 +151,10 @@ don't need auth but writes originating from outside the container do.
   missing or a calendar fetch fails, so a partially-configured install still
   boots.
 - **Smart display / chores**: if you own a smart-frame-style device with its
-  own API (Skylight was this build's choice), wire it in as an optional
-  source that also degrades to "no data" gracefully when unconfigured, rather
-  than a hard dependency.
+  own API, wire it in as an optional source that also degrades to "no data"
+  gracefully when unconfigured, rather than a hard dependency. Not required —
+  a simple in-app chores list works fine without one, and skips a layer of
+  third-party API friction entirely.
 - **General principle**: every external integration should be something the
   app can simply not have, not something that blocks startup — check for
   config at call time, return empty results if absent, and let the UI hide
